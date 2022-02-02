@@ -58,7 +58,7 @@ public class FreshWorksTest {
 	@Test(priority = 1)
 	public void freshWorkslogoTest() {
 		boolean flag = false;
-			flag = driver.findElement(By.cssSelector("a.logo.logo-fworks")).isDisplayed();
+			flag = driver.findElement(By.xpath("(//img[@alt='Freshworks'])[1]")).isDisplayed();
 			Assert.assertTrue(flag);
 	}
 
@@ -66,14 +66,15 @@ public class FreshWorksTest {
 	public void freshWorksTitleTest() {
 		System.out.println("running title test...");
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "A fresh approach to customer engagement");
+		//assertEquals(driver.getTitle(), "A fresh approach to customer engagement");
+		assertEquals(driver.getTitle(), "Freshworks | Modern and Easy Customer and Employee Experience Software");
 	}
 
 	@Test(priority = 3)
 	public void getFooterLinksTest() {
 		List<WebElement> footerLinksList = driver.findElements(By.cssSelector("ul.footer-nav li a"));
 		footerLinksList.forEach(ele -> System.out.println(ele.getText()));
-		assertEquals(footerLinksList.size(), 35);
+		assertEquals(footerLinksList.size(), 23);     //35
 	}
 
 	@AfterMethod
