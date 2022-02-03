@@ -60,6 +60,7 @@ public class FreshWorksTest {
 		boolean flag = false;
 			flag = driver.findElement(By.xpath("(//img[@alt='Freshworks'])[1]")).isDisplayed();
 			Assert.assertTrue(flag);
+		        System.out.println("running logo test...");
 	}
 
 	@Test(priority = 2)
